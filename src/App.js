@@ -8,6 +8,8 @@ import createRootReducer from 'mirador/dist/es/src/state/reducers/rootReducer';
 import settings from 'mirador/dist/es/src/config/settings'
 import * as actions from 'mirador/dist/es/src/state/actions'
 import CanvasMap from "./CanvasMap";
+import {MapContainer} from 'react-leaflet';
+import CanvasMapContainer from "./CanvasMapContainer";
 
 const WorkspaceArea = lazy(() => import('mirador/dist/es/src/containers/WorkspaceArea'));
 
@@ -47,7 +49,7 @@ export class App extends Component {
                             </Suspense>
                         </AppProviders>
                     </PluginProvider>
-                    <CanvasMap />
+                    <CanvasMapContainer />
                 </Provider>
             </div>
         );
