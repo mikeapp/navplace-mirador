@@ -1,5 +1,3 @@
-import Reactfrom from "react";
-
 export default function AutoFocusControl(props) {
     const POSITION_CLASSES = {
         bottomleft: 'leaflet-bottom leaflet-left',

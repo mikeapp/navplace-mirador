@@ -4,11 +4,8 @@ import PropTypes from 'prop-types';
 import PluginProvider from 'mirador/dist/es/src/extend/PluginProvider';
 import AppProviders from 'mirador/dist/es/src/containers/AppProviders';
 import createStore from 'mirador/dist/es/src/state/createStore';
-import createRootReducer from 'mirador/dist/es/src/state/reducers/rootReducer';
 import settings from 'mirador/dist/es/src/config/settings'
 import * as actions from 'mirador/dist/es/src/state/actions'
-import CanvasMap from "./CanvasMap";
-import {MapContainer} from 'react-leaflet';
 import CanvasMapContainer from "./CanvasMapContainer";
 
 const WorkspaceArea = lazy(() => import('mirador/dist/es/src/containers/WorkspaceArea'));

@@ -1,4 +1,4 @@
-import {MapContainer, TileLayer, GeoJSON, Tooltip, useMap} from 'react-leaflet';
+import {TileLayer, GeoJSON, Tooltip, useMap} from 'react-leaflet';
 import React, {useEffect, useState} from 'react';
 import { bbox, featureCollection, bboxPolygon} from '@turf/turf';
 
