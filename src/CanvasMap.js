@@ -42,7 +42,7 @@ export default function CanvasMap(props) {
                     <GeoJSON
                         key={data.id}
                         data={data}
-                    ><Tooltip>Location {data.features[0].properties.label.en}</Tooltip></GeoJSON>);
+                    ><Tooltip>{data.features[0].properties.label.en}</Tooltip></GeoJSON>);
                 console.log(newGeojsonComponents);
 
                 // Get region of interest and zoom map
