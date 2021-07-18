@@ -5,8 +5,6 @@ import { bbox, featureCollection, bboxPolygon} from '@turf/turf';
 
 
 export default function CanvasMap(props) {
-
-
     console.log(props.manifests);
     console.log(props.windows);
     const map = useMap();
@@ -17,9 +15,8 @@ export default function CanvasMap(props) {
 
     useEffect(() => {
         if (Object.values(manifests).length > 0) {
-            const allManifests = Object.values(manifests).filter(m => !m.isFetching);
+            const allManifests = Object.values(manifests).filter(m => !m.isFetching).filter(m => m.json.navPlace);
             let geojson = allManifests
-                .filter(m => m.json.navPlace)
                 .map(m => m.json.navPlace);
             console.log(geojson);
 
@@ -46,11 +43,17 @@ export default function CanvasMap(props) {
                 console.log(newGeojsonComponents);
 
                 // Get region of interest and zoom map
-                const features = zoomGeoJson.map(json => bboxPolygon(bbox(json)));
-                console.log(features);
-                const allBounds = bbox(featureCollection(features));
-                console.log(allBounds);
-                map.fitBounds([[allBounds[1], allBounds[0]], [allBounds[3], allBounds[2]]]);
+                if (props.zoom) {
+                    if (zoomGeoJson.length > 0) {
+                        const features = zoomGeoJson.map(json => bboxPolygon(bbox(json)));
+                        console.log(features);
+                        const allBounds = bbox(featureCollection(features));
+                        console.log(allBounds);
+                        map.fitBounds([[allBounds[1], allBounds[0]], [allBounds[3], allBounds[2]]]);
+                    } else {
+                        map.fitWorld();
+                    }
+                }
 
                 props.setNeedsUpdate(true);
                 setGeojsonComponents(newGeojsonComponents);
