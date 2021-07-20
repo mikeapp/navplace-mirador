@@ -15,13 +15,29 @@ export default function AutoFocusControl(props) {
     }
 
     const style = {
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
+        padding: "0.5em"
     }
+
+    const buttonStyle = {
+        backgroundColor: "#00DD00",
+        padding: "1em"
+    }
+
+    const addManifest = (e, uri) => {
+        props.addManifest(uri);
+        e.preventDefault();
+    }
+
+    const prefix = window.location.origin ;
 
     return (
         <div className={positionClass}>
             <div className="leaflet-control leaflet-bar" style={style}>
+                <input type="button" style={buttonStyle} onClick={(e) => addManifest(e, prefix + "/manifests/navplace.json")} value="Add manifest #1" /><br/>
+                <input type="button" style={buttonStyle} onClick={(e) => addManifest(e, prefix + "/manifests/recipe.json")} value="Add manifest #2"/><br/>
                 <input type="checkbox" onChange={handleClick} checked={props.zoom} />Zoom to Items
+
             </div>
         </div>
     );

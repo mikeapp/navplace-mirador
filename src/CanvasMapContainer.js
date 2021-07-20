@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import CanvasMap from "./CanvasMap";
 import React, {useState} from "react";
 import AutoFocusControl from "./AutoFocusControl";
+import {addResource} from "mirador/dist/es/src/state/actions/catalog";
 
 function CanvasMapContainer(props) {
     const [needsUpdate, setNeedsUpdate] = useState(false);
@@ -12,10 +13,14 @@ function CanvasMapContainer(props) {
         <MapContainer center={[0, 0]} zoom={1}>
             <CanvasMap manifests={props.manifests} windows={props.windows} setNeedsUpdate={setNeedsUpdate}
                        zoom={zoom}/>
-            <AutoFocusControl zoom={zoom} setZoom={setZoom}/>
+            <AutoFocusControl zoom={zoom} setZoom={setZoom} addManifest={props.addResource}/>
         </MapContainer>
     );
 }
+
+const mapDispatchToProps = {
+    addResource: addResource,
+};
 
 const mapStateToProps = function(state) {
     return {
@@ -24,4 +29,4 @@ const mapStateToProps = function(state) {
     }
 }
 
-export default connect(mapStateToProps)(CanvasMapContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(CanvasMapContainer)
