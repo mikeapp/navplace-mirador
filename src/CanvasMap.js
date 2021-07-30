@@ -2,8 +2,6 @@ import {TileLayer, GeoJSON, Tooltip, useMap} from 'react-leaflet';
 import React, {useEffect, useState} from 'react';
 import { bbox, featureCollection, bboxPolygon} from '@turf/turf';
 
-
-
 export default function CanvasMap(props) {
     console.log(props.manifests);
     console.log(props.windows);
@@ -12,16 +10,16 @@ export default function CanvasMap(props) {
     const manifests = props.manifests;
     const windows = props.windows;
 
-
     useEffect(() => {
         if (Object.values(manifests).length > 0) {
-            const allManifests = Object.values(manifests).filter(m => !m.isFetching).filter(m => m.json.navPlace);
+            const allManifests = Object.values(manifests).filter(m => !m.isFetching).filter(m => m?.json?.navPlace);
             let geojson = allManifests
                 .map(m => m.json.navPlace);
             console.log(geojson);
 
             // What should the map focus on?
             let zoomGeoJson = geojson;
+            // If Mirador window(s) are open, focus on their locations
             let windowIds = [];
             if (Object.values(windows).length > 0) {
                 windowIds = Object.values(windows).map(w => w.manifestId);

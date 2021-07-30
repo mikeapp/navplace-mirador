@@ -25,8 +25,16 @@ export default function AutoFocusControl(props) {
     }
 
     const addManifest = (e, uri) => {
-        props.addManifest(uri);
         e.preventDefault();
+        props.addManifest(uri);
+    }
+
+    const addNewWindow = (e, uri) => {
+        e.preventDefault();
+        let manifestIds = Object.values(props.windows).map(w => w.manifestId);
+        if (!manifestIds.includes(uri)) {
+            props.addWindow({manifestId: uri})
+        }
     }
 
     const prefix = window.location.origin ;
@@ -37,7 +45,6 @@ export default function AutoFocusControl(props) {
                 <input type="button" style={buttonStyle} onClick={(e) => addManifest(e, prefix + "/manifests/navplace.json")} value="Add manifest #1" /><br/>
                 <input type="button" style={buttonStyle} onClick={(e) => addManifest(e, prefix + "/manifests/recipe.json")} value="Add manifest #2"/><br/>
                 <input type="checkbox" onChange={handleClick} checked={props.zoom} />Zoom to Items
-
             </div>
         </div>
     );
