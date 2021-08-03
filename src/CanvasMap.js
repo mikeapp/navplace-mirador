@@ -51,7 +51,7 @@ export default function CanvasMap(props) {
                             click: () => addNewWindow(geojsonManifests[index].id)
                         }}
                     >
-                        <Tooltip>{data.features[0].properties.label.en}</Tooltip>
+                        <Tooltip>{geojsonManifests[index].json.label.en}</Tooltip>
                     </GeoJSON>);
                 console.log(newGeojsonComponents);
 
