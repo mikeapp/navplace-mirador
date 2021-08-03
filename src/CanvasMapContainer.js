@@ -14,6 +14,9 @@ function CanvasMapContainer(props) {
     useEffect(() => {
         props.addResource(prefix + "/manifests/navplace.json");
         props.addResource(prefix + "/manifests/recipe.json");
+        props.addResource(prefix + "/manifests/1012.json");
+        props.addResource(prefix + "/manifests/501.json");
+        props.addResource(prefix + "/manifests/1011.json");
     });
 
     return (
