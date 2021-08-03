@@ -1,0 +1,361 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://127.0.0.1:3000/501.json",
+  "type": "Manifest",
+  "navPlace": {
+    "id":"https://127.0.0.1:3000/501/feature",
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": "feature1",
+        "type": "Feature",
+        "properties": {
+          "label": {
+            "en": [
+              "Trajan's Forum, Rome"
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.485833,
+            41.895556
+          ]
+        }
+      }]
+  },
+  "label": {
+    "en": [
+      "Sir Charles Lock Eastlake, 1793–1865, British, active in Italy (1816–30), A View of Trajan's Forum, Rome, 1821"
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": [
+          "Copyright Statement"
+        ]
+      },
+      "value": {
+        "en": [
+          "Public Domain"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Description"
+        ]
+      },
+      "value": {
+        "en": [
+          "Support (PTG): 24 3/8 x 20 1/8 inches (61.9 x 51.1 cm)"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Creator"
+        ]
+      },
+      "value": {
+        "en": [
+          "Sir Charles Lock Eastlake, 1793–1865, British, active in Italy (1816–30)"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Title"
+        ]
+      },
+      "value": {
+        "en": [
+          "A View of Trajan's Forum, Rome"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Medium"
+        ]
+      },
+      "value": {
+        "en": [
+          "Oil on canvas"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Physical Description"
+        ]
+      },
+      "value": {
+        "en": [
+          "Support (PTG): 24 3/8 x 20 1/8 inches (61.9 x 51.1 cm)"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Credit Line"
+        ]
+      },
+      "value": {
+        "en": [
+          "Yale Center for British Art, Paul Mellon Fund"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Institution"
+        ]
+      },
+      "value": {
+        "en": [
+          "Yale Center for British Art"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Collection"
+        ]
+      },
+      "value": {
+        "en": [
+          "Paintings and Sculpture"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Call Number"
+        ]
+      },
+      "value": {
+        "en": [
+          "B1980.4.1"
+        ]
+      }
+    }
+  ],
+  "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "requiredStatement": {
+    "label": {
+      "en": [
+        "Rights Description"
+      ]
+    },
+    "value": {
+      "en": [
+        "Metadata describing Yale Center for British Art collections is public domain under CC0. Copyright or other restrictions may apply to cultural works or images of those works in this record."
+      ]
+    }
+  },
+  "logo": [
+    {
+      "id": "https://static.britishart.yale.edu/images/ycba_logo.jpg",
+      "type": "Image"
+    }
+  ],
+  "homepage": [
+    {
+      "format": "text/html",
+      "id": "https://collections.britishart.yale.edu/catalog/tms:501",
+      "label": {
+        "en": [
+          "catalog entry at the Yale Center for British Art"
+        ]
+      },
+      "type": "Text"
+    }
+  ],
+  "seeAlso": [
+    {
+      "format": "text/xml",
+      "id": "https://harvester-bl.britishart.yale.edu/oaicatmuseum/OAIHandler?verb=GetRecord\u0026identifier=oai:tms.ycba.yale.edu:501\u0026metadataPrefix=lido",
+      "profile": "http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd",
+      "type": "Dataset"
+    },
+    {
+      "format": "text/rdf+n3",
+      "id": "http://collection.britishart.yale.edu/id/page/object/501",
+      "type": "Dataset"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://manifests.collections.yale.edu/canvas/ycba/0fa10052-2b8b-4d77-96e6-ff47c1851ae9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "cropped to image"
+        ]
+      },
+      "height": 3855,
+      "width": 3108,
+      "items": [
+        {
+          "id": "https://manifests.collections.yale.edu/annopage/ycba/0fa10052-2b8b-4d77-96e6-ff47c1851ae9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://manifests.collections.yale.edu/annotation/ycba/0fa10052-2b8b-4d77-96e6-ff47c1851ae9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://images.collections.yale.edu/iiif/2/ycba:0fa10052-2b8b-4d77-96e6-ff47c1851ae9/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "service": [
+                  {
+                    "@id": "https://images.collections.yale.edu/iiif/2/ycba:0fa10052-2b8b-4d77-96e6-ff47c1851ae9",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ],
+                "height": 3855,
+                "width": 3108
+              },
+              "target": "https://manifests.collections.yale.edu/canvas/ycba/0fa10052-2b8b-4d77-96e6-ff47c1851ae9"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://media.collections.yale.edu/tiff/ycba/0fa10052-2b8b-4d77-96e6-ff47c1851ae9.tif",
+          "type": "Image",
+          "label": {
+            "en": [
+              "TIFF for download"
+            ]
+          },
+          "format": "image/tiff"
+        }
+      ],
+      "thumbnail": [
+        {
+          "id": "https://media.collections.yale.edu/thumbnail/ycba/0fa10052-2b8b-4d77-96e6-ff47c1851ae9",
+          "type": "Image",
+          "width": 387,
+          "height": 480,
+          "service": [
+            {
+              "@id": "https://media.collections.yale.edu/thumbnail/ycba/0fa10052-2b8b-4d77-96e6-ff47c1851ae9",
+              "@type": "ImageService2",
+              "profile": "level0"
+            }
+          ]
+        }
+      ],
+      "metadata": [
+        {
+          "label": {
+            "en": [
+              "Image Use Rights"
+            ]
+          },
+          "value": {
+            "en": [
+              "No Copyright: You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. (CC0 1.0)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://manifests.collections.yale.edu/canvas/ycba/fa16c224-22ee-495b-9fac-c3c87746d1be",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "frame obscured, recto"
+        ]
+      },
+      "height": 6767,
+      "width": 4612,
+      "items": [
+        {
+          "id": "https://manifests.collections.yale.edu/annopage/ycba/fa16c224-22ee-495b-9fac-c3c87746d1be",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://manifests.collections.yale.edu/annotation/ycba/fa16c224-22ee-495b-9fac-c3c87746d1be",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://images.collections.yale.edu/iiif/2/ycba:fa16c224-22ee-495b-9fac-c3c87746d1be/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "service": [
+                  {
+                    "@id": "https://images.collections.yale.edu/iiif/2/ycba:fa16c224-22ee-495b-9fac-c3c87746d1be",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ],
+                "height": 6767,
+                "width": 4612
+              },
+              "target": "https://manifests.collections.yale.edu/canvas/ycba/fa16c224-22ee-495b-9fac-c3c87746d1be"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://media.collections.yale.edu/tiff/ycba/fa16c224-22ee-495b-9fac-c3c87746d1be.tif",
+          "type": "Image",
+          "label": {
+            "en": [
+              "TIFF for download"
+            ]
+          },
+          "format": "image/tiff"
+        }
+      ],
+      "thumbnail": [
+        {
+          "id": "https://media.collections.yale.edu/thumbnail/ycba/fa16c224-22ee-495b-9fac-c3c87746d1be",
+          "type": "Image",
+          "width": 327,
+          "height": 480,
+          "service": [
+            {
+              "@id": "https://media.collections.yale.edu/thumbnail/ycba/fa16c224-22ee-495b-9fac-c3c87746d1be",
+              "@type": "ImageService2",
+              "profile": "level0"
+            }
+          ]
+        }
+      ],
+      "metadata": [
+        {
+          "label": {
+            "en": [
+              "Image Use Rights"
+            ]
+          },
+          "value": {
+            "en": [
+              "No Copyright: You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. (CC0 1.0)"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
