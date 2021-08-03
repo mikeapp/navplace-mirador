@@ -1,7 +1,7 @@
 import {MapContainer} from 'react-leaflet';
 import { connect } from 'react-redux';
 import CanvasMap from "./CanvasMap";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import AutoFocusControl from "./AutoFocusControl";
 import {addResource} from "mirador/dist/es/src/state/actions/catalog";
 import {addWindow} from "mirador/dist/es/src/state/actions/window";
@@ -9,12 +9,18 @@ import {addWindow} from "mirador/dist/es/src/state/actions/window";
 function CanvasMapContainer(props) {
     const [needsUpdate, setNeedsUpdate] = useState(false);
     const [zoom, setZoom] = useState(true);
+    const prefix = window.location.origin ;
+
+    useEffect(() => {
+        props.addResource(prefix + "/manifests/navplace.json");
+        props.addResource(prefix + "/manifests/recipe.json");
+    });
 
     return (
         <MapContainer center={[0, 0]} zoom={1}>
-            <CanvasMap manifests={props.manifests} windows={props.windows} setNeedsUpdate={setNeedsUpdate}
+            <CanvasMap manifests={props.manifests} windows={props.windows} addWindow={props.addWindow} setNeedsUpdate={setNeedsUpdate}
                        zoom={zoom}/>
-            <AutoFocusControl windows={props.windows} zoom={zoom} setZoom={setZoom} addManifest={props.addResource} addWindow={props.addWindow}/>
+            <AutoFocusControl zoom={zoom} setZoom={setZoom} addManifest={props.addResource}/>
         </MapContainer>
     );
 }

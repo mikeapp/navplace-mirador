@@ -29,14 +29,6 @@ export default function AutoFocusControl(props) {
         props.addManifest(uri);
     }
 
-    const addNewWindow = (e, uri) => {
-        e.preventDefault();
-        let manifestIds = Object.values(props.windows).map(w => w.manifestId);
-        if (!manifestIds.includes(uri)) {
-            props.addWindow({manifestId: uri})
-        }
-    }
-
     const prefix = window.location.origin ;
 
     return (

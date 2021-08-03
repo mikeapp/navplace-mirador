@@ -3,7 +3,7 @@
     "http://iiif.io/api/extension/navplace/context.json",
     "http://iiif.io/api/presentation/3/context.json"
   ],
-  "id":"https://example.org/iiif/manifest/1",
+  "id":"https://127.0.0.1:3000/iiif/manifest/1",
   "type":"Manifest",
   "label":{
     "en":[

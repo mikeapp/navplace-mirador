@@ -10,9 +10,19 @@ export default function CanvasMap(props) {
     const manifests = props.manifests;
     const windows = props.windows;
 
+    const addNewWindow = (uri) => {
+        let manifestIds = Object.values(windows).map(w => w.manifestId);
+        if (!manifestIds.includes(uri)) {
+            props.addWindow({manifestId: uri})
+        }
+    }
+
+
     useEffect(() => {
         if (Object.values(manifests).length > 0) {
             const allManifests = Object.values(manifests).filter(m => !m.isFetching).filter(m => m?.json?.navPlace);
+            let geojsonManifests = allManifests
+                .filter(m => m.json.navPlace);
             let geojson = allManifests
                 .map(m => m.json.navPlace);
             console.log(geojson);
@@ -37,7 +47,12 @@ export default function CanvasMap(props) {
                     <GeoJSON
                         key={data.id}
                         data={data}
-                    ><Tooltip>{data.features[0].properties.label.en}</Tooltip></GeoJSON>);
+                        eventHandlers={{
+                            click: () => addNewWindow(geojsonManifests[index].id)
+                        }}
+                    >
+                        <Tooltip>{data.features[0].properties.label.en}</Tooltip>
+                    </GeoJSON>);
                 console.log(newGeojsonComponents);
 
                 // Get region of interest and zoom map
