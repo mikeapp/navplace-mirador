@@ -17,6 +17,10 @@ export default function CanvasMap(props) {
         }
     }
 
+    const getLabel = (json) => {
+        const label = json.label;
+        return label[Object.keys(label)[0]];
+    }
 
     useEffect(() => {
         if (Object.values(manifests).length > 0) {
@@ -51,7 +55,7 @@ export default function CanvasMap(props) {
                             click: () => addNewWindow(geojsonManifests[index].id)
                         }}
                     >
-                        <Tooltip>{geojsonManifests[index].json.label.en}</Tooltip>
+                        <Tooltip>{getLabel(geojsonManifests[index].json)}</Tooltip>
                     </GeoJSON>);
                 console.log(newGeojsonComponents);
 
