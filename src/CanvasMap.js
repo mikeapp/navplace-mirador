@@ -73,10 +73,9 @@ export default function CanvasMap(props) {
                 const newGeojsonComponents = geojson.map((data, index) => {
                     const currentManifestId = geojsonManifests[index].id;
                     const highlight = openManifestIds.includes(currentManifestId);
-                    console.log("Highlight: " + highlight);
                     const pointMarker = (highlight)? redMarker : blueMarker;
                     return (<GeoJSON
-                        key={data.id}
+                        key={currentManifestId + ":" + highlight}
                         data={data}
                         eventHandlers={{
                             click: () => addNewWindow(geojsonManifests[index].id)
@@ -86,6 +85,7 @@ export default function CanvasMap(props) {
                         <Tooltip>{getLabel(geojsonManifests[index].json)}</Tooltip>
                     </GeoJSON>)
                 });
+                setGeojsonComponents(newGeojsonComponents);
 
                 // Get region of interest and zoom map
                 if (props.zoom) {
@@ -99,8 +99,6 @@ export default function CanvasMap(props) {
                         map.fitWorld();
                     }
                 }
-                setGeojsonComponents(newGeojsonComponents);
-                props.setNeedsUpdate(true);
             }
         }
     }, [props.manifests, props.windows]);

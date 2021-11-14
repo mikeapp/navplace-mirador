@@ -7,7 +7,6 @@ import {addResource} from "mirador/dist/es/src/state/actions/catalog";
 import {addWindow} from "mirador/dist/es/src/state/actions/window";
 
 function CanvasMapContainer(props) {
-    const [needsUpdate, setNeedsUpdate] = useState(false);
     const [zoom, setZoom] = useState(true);
     const prefix = window.location.origin ;
 
@@ -21,7 +20,7 @@ function CanvasMapContainer(props) {
 
     return (
         <MapContainer center={[0, 0]} zoom={1}>
-            <CanvasMap manifests={props.manifests} windows={props.windows} addWindow={props.addWindow} setNeedsUpdate={setNeedsUpdate}
+            <CanvasMap manifests={props.manifests} windows={props.windows} addWindow={props.addWindow}
                        zoom={zoom}/>
             <AutoFocusControl zoom={zoom} setZoom={setZoom} addManifest={props.addResource}/>
         </MapContainer>
