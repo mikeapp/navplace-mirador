@@ -1,3 +1,5 @@
 # NavPlace Mirador Wrapper
 
-See https://iiifmap.herokuapp.com for a demo
+Demo sites:
+* https://iiifmap.herokuapp.com 
+* https://eliotjordan.github.io/navplace/
